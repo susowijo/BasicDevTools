@@ -16,18 +16,18 @@ namespace DevTools.ADO
         private static readonly ContactRepository _contactRepository = new ContactRepository();
         static void Main(string[] args)
         {
-            /*      COMMENT TEST       
-            var comment = new Comment() { Content = "my first comment  [updated]", ContactId = 1 };
+            /*      COMMENT TEST       */
+            //var comment = new Comment() { Content = "my elf comment [update]", ContactId = 1 };
             //_commentRepository.Add(comment);
-            //_commentRepository.Update(15, comment);
-            _commentRepository.Delete(3);
-            /*var data = _commentRepository.Get(4);
-            //var datas = _commentRepository.GetAll();
-            var multiDimArray = Design.GetMultiDimArrayFrom(new List<Comment>() { data});
-            Design.Show(multiDimArray);*/
+            //_commentRepository.Update(7, comment);
+            //_commentRepository.Delete(3);
+            //var data = _commentRepository.Get(4);
+            var data = _commentRepository.GetAll();
+            var multiDimArray = Design.GetMultiDimArrayFrom(data);
+            Design.Show(multiDimArray);
 
 
-            /*      CONTACT TEST       */
+            /*      CONTACT TEST       
             var contact = new Contact() 
             { 
                 PhoneNumber = "695571929",
@@ -39,7 +39,7 @@ namespace DevTools.ADO
                 LastName = "Billionnaire"
             };
             //_contactRepository.Add(contact);
-            _contactRepository.Update(2, contact);
+            _contactRepository.Update(2, contact);*/
             /*var data = _contactRepository.Get(1);
             //var datas = _contactRepository.GetAll();
             var multiDimArray = Design.GetMultiDimArrayFrom(new List<Contact>() { data});

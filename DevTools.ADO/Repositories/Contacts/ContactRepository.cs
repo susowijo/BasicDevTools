@@ -104,8 +104,8 @@ namespace DevTools.ADO.Repositories.Contacts
                             Email = reader.GetString("Email"),
                             Province = reader.GetString("Province"),
                             PhoneNumber = reader.GetString("PhoneNumber"),
-                            CreateOn = reader.IsDBNull(8) ? (DateTime?)null : reader.GetDateTime("createon"),
-                            UpdateOn = reader.IsDBNull(9) ? (DateTime?)null : reader.GetDateTime("updateon"),
+                            //CreateOn = reader.IsDBNull(8) ? (DateTime?)null : reader.GetDateTime("createon"),
+                            //UpdateOn = reader.IsDBNull(9) ? (DateTime?)null : reader.GetDateTime("updateon"),
                         };
                     }
                 }
@@ -140,8 +140,8 @@ namespace DevTools.ADO.Repositories.Contacts
                             Email = reader.GetString("Email"),
                             Province = reader.GetString("Province"),
                             PhoneNumber = reader.GetString("PhoneNumber"),
-                            CreateOn = reader.IsDBNull(3) ? (DateTime?)null : reader.GetDateTime("createon"),
-                            UpdateOn = reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime("updateon"),
+                            //CreateOn = reader.IsDBNull(3) ? (DateTime?)null : reader.GetDateTime("createon"),
+                            //UpdateOn = reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime("updateon"),
                         };
                         // add contact to list
                         contacts.Add(contact);

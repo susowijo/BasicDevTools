@@ -11,7 +11,7 @@ namespace DevTools.ADO.Repositories.Comments
     /// <summary>
     /// This class manage all methods describe in ICommentRepository
     /// </summary>
-    internal class CommentRepository : ICommentRepository
+    internal class CommentRepository : BaseRepository<Comment>, ICommentRepository
     {
         #region Properties (Private)
         private readonly string connectionString;
@@ -29,7 +29,7 @@ namespace DevTools.ADO.Repositories.Comments
         #endregion
 
         #region Methods (Public)
-        public void Add(Comment entity)
+        /*public void Add(Comment entity)
         {
             using (MySqlConnection con = new MySqlConnection(connectionString))
             {
@@ -39,7 +39,7 @@ namespace DevTools.ADO.Repositories.Comments
 
                 // define the parameters of store procedure / request
                 cmd.Parameters.AddWithValue("_content", entity.Content);
-                cmd.Parameters.AddWithValue("_contact_id", entity.ContactId);
+                cmd.Parameters.AddWithValue("_contactid", entity.ContactId);
                 cmd.Parameters.AddWithValue("_createon", DateTime.Now.ToString("yyyy/MM/dd"));
 
                 con.Open();
@@ -48,7 +48,7 @@ namespace DevTools.ADO.Repositories.Comments
 
                 con.Close();
             }
-        }
+        }*/
 
         public void Delete(int id)
         {
@@ -93,9 +93,9 @@ namespace DevTools.ADO.Repositories.Comments
                         {
                             Id = reader.GetInt32("id"),
                             Content = reader.GetString("content"),
-                            ContactId = reader.GetInt32("contact_id"),
-                            CreateOn = reader.IsDBNull(3) ? (DateTime?)null : reader.GetDateTime("createon"),
-                            UpdateOn = reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime("updateon"),
+                            ContactId = reader.GetInt32("contactId"),
+                            //CreateOn = reader.IsDBNull(3) ? (DateTime?)null : reader.GetDateTime("createon"),
+                            //UpdateOn = reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime("updateon"),
                         };
                     }
                 }
@@ -103,7 +103,7 @@ namespace DevTools.ADO.Repositories.Comments
             return comment;
         }
 
-        public ICollection<Comment> GetAll()
+        /*public ICollection<Comment> GetAll()
         {
             List<Comment> comments = new List<Comment>();
             using (var con = new MySqlConnection(connectionString))
@@ -124,7 +124,7 @@ namespace DevTools.ADO.Repositories.Comments
                         {
                             Id = reader.GetInt32("id"),
                             Content = reader.GetString("content"),
-                            ContactId = reader.GetInt32("contact_id"),
+                            ContactId = reader.GetInt32("contactId"),
                             CreateOn = reader.IsDBNull(3) ? (DateTime?)null : reader.GetDateTime("createon"),
                             UpdateOn = reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime("updateon"),
                         };
@@ -134,7 +134,7 @@ namespace DevTools.ADO.Repositories.Comments
                 }
             }
             return comments;
-        }
+        }*/
 
         public ICollection<Comment> GetAllByContact(int contactId)
         {
@@ -161,9 +161,9 @@ namespace DevTools.ADO.Repositories.Comments
                         {
                             Id = reader.GetInt32("id"),
                             Content = reader.GetString("content"),
-                            ContactId = reader.GetInt32("contact_id"),
-                            CreateOn = reader.IsDBNull(3) ? (DateTime?)null : reader.GetDateTime("createon"),
-                            UpdateOn = reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime("updateon"),
+                            ContactId = reader.GetInt32("contactId"),
+                            //CreateOn = reader.IsDBNull(3) ? (DateTime?)null : reader.GetDateTime("createon"),
+                            //UpdateOn = reader.IsDBNull(4) ? (DateTime?)null : reader.GetDateTime("updateon"),
                         };
                         // add comment to list
                         comments.Add(comment);
@@ -173,7 +173,7 @@ namespace DevTools.ADO.Repositories.Comments
             return comments;
         }
 
-        public void Update(int id, Comment entity)
+        /*public void Update(int id, Comment entity)
         {
             using (MySqlConnection con = new MySqlConnection(connectionString))
             {
@@ -184,7 +184,7 @@ namespace DevTools.ADO.Repositories.Comments
                 // define the parameters of store procedure / request
                 cmd.Parameters.AddWithValue("_id", id);
                 cmd.Parameters.AddWithValue("_content", entity.Content);
-                cmd.Parameters.AddWithValue("_contact_id", entity.ContactId);
+                cmd.Parameters.AddWithValue("_contactid", entity.ContactId);
                 cmd.Parameters.AddWithValue("_updateon", DateTime.Now.ToString("yyyy/MM/dd"));
 
                 con.Open();
@@ -193,7 +193,7 @@ namespace DevTools.ADO.Repositories.Comments
 
                 con.Close();
             }
-        }
+        }*/
         #endregion
     }
 }

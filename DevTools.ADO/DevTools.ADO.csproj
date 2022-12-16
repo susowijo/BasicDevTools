@@ -90,6 +90,7 @@
     <Compile Include="Repositories\Comments\CommentRepository.cs" />
     <Compile Include="Repositories\Contacts\IContactRepository.cs" />
     <Compile Include="Repositories\Contacts\ContactRepository.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\IBaseRepository.cs" />
   </ItemGroup>
   <ItemGroup>
